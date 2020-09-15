@@ -12,7 +12,6 @@ import com.formacionbdi.microsercios.commons.alumnos.model.entity.Alumno;
 @FeignClient(name="microservicio-usuarios")
 public interface AlumnoFeignClient {
 	
-	//@GetMapping("/alumnos-por-curso")
-	@RequestMapping(method = RequestMethod.GET, value = "/alumnos-por-curso")
+	@GetMapping("/alumnos-por-curso")
 	public Iterable<Alumno> obtnerAlumnosPorCurso(@RequestBody List<Long> ids);
 }
