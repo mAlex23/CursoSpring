@@ -30,10 +30,8 @@ import com.formacionbdi.microsercios.commons.controllers.CommonController;
 @RestController
 public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 
-	//@ResponseBody
-	//@GetMapping(path="/alumnos-por-curso", consumes = "application/json")
-	@RequestMapping(method = RequestMethod.GET, value = "/alumnos-por-curso", consumes = "application/json")
-	public ResponseEntity<?> obtnerAlumnosPorCurso(@RequestBody List<Long> ids){
+	@GetMapping("/alumnos-por-curso")
+	public ResponseEntity<?> obtenerAlumnosPorCurso(@RequestParam List<Long> ids){
 		return ResponseEntity.ok(service.findAllById(ids));
 	}
 	
